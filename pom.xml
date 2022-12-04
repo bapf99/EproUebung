@@ -6,7 +6,12 @@
 
     <groupId>de.thbingen.epro</groupId>
     <artifactId>EproUebung</artifactId>
+    <packaging>pom</packaging>
     <version>1.0</version>
+    <modules>
+        <module>service</module>
+        <module>config-server</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -30,13 +35,7 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-        <!-- Spring cloud config -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter</artifactId>
-            <version>3.1.5</version>
-            <scope>compile</scope>
-        </dependency>
+
 
     </dependencies>
 

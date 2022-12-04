@@ -1,0 +1,5 @@
+de\thbingen\epro\BasicConfiguration.class
+de\thbingen\epro\models\User.class
+de\thbingen\epro\models\Address.class
+de\thbingen\epro\OurWebApplication.class
+de\thbingen\epro\controller\UserController.class
