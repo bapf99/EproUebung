@@ -16,6 +16,15 @@ public class User extends AbstractEntity {
 
     @Column
     private String eMail;
+
+    @Column
+    private String password;
+
+    @ManyToOne
+    private Group group;
+
+    @OneToOne
+    @JoinColumn(name = "address_id", nullable = false)
     private Address address;
 
     public User(){
@@ -26,6 +35,7 @@ public class User extends AbstractEntity {
         this.firstname = firstName;
         this.name = name;
         this.eMail = eMail;
+        this.password = password;
         this.address = address;
     }
 
@@ -52,6 +62,14 @@ public class User extends AbstractEntity {
 
     public void seteMail(String eMail) {
         this.eMail = eMail;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Address getAddress() {
