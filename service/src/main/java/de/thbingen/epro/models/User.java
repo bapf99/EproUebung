@@ -39,13 +39,16 @@ public class User extends AbstractEntity {
         this.address = address;
     }
 
+    public Group getGroup() { return group; }
 
-    public String getSurname() {
-        return surname;
+    public void setGroup(Group group) { this.group = group; }
+
+    public String getFirstName() {
+        return firstname;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setFirstName(String surname) {
+        this.firstname = surname;
     }
 
     public String getName() {
