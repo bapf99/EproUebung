@@ -1,5 +1,9 @@
+de\thbingen\epro\basemodels\AbstractEntity.class
 de\thbingen\epro\BasicConfiguration.class
-de\thbingen\epro\models\User.class
+de\thbingen\epro\models\Group.class
 de\thbingen\epro\models\Address.class
 de\thbingen\epro\OurWebApplication.class
 de\thbingen\epro\controller\UserController.class
+de\thbingen\epro\repositories\UserRepository.class
+de\thbingen\epro\models\User.class
+de\thbingen\epro\models\Right.class

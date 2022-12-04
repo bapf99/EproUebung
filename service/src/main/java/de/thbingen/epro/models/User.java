@@ -1,14 +1,29 @@
 package de.thbingen.epro.models;
 
-public class User {
+import de.thbingen.epro.basemodels.AbstractEntity;
 
-    private String surname;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "user")
+public class User extends AbstractEntity {
+
+    @Column
+    private String firstname;
+
+    @Column
     private String name;
+
+    @Column
     private String eMail;
     private Address address;
 
-    public User(String surname, String name, String eMail, Address address){
-        this.surname = surname;
+    public User(){
+        super();
+    }
+    public User(String firstName, String name, String eMail, String password, Address address){
+        super();
+        this.firstname = firstName;
         this.name = name;
         this.eMail = eMail;
         this.address = address;

@@ -1,7 +1,10 @@
 package de.thbingen.epro.controller;
 
 import de.thbingen.epro.models.User;
+import de.thbingen.epro.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -11,9 +14,12 @@ public class UserController {
 
     private ArrayList<User> users = new ArrayList<User>();
 
+    @Autowired
+    private UserRepository userRepository;
+
     @GetMapping(value = "/users")
-    public ArrayList<User> getAllUsers(){
-        return users;
+    public Iterable<User> getAllUsers(){
+        return userRepository.findAll();
     }
 
     @GetMapping(value = "/users/{id}")
@@ -21,10 +27,15 @@ public class UserController {
         return users.get(id);
     }
 
+    @GetMapping(value = "/users/{firstname}")
+    public List<User> getUserByFirstname(@PathVariable String firstname){
+        return userRepository.findByFirstname(firstname);
+    }
+
     @PostMapping(value = "/createUser", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public int addUser(@RequestBody User user) {
-        users.add(user);
-        return users.indexOf(user);
+    public void addUser(@RequestBody User user) {
+        //users.add(user);
+        userRepository.save(user);
     }
 
     @DeleteMapping(value = "/deleteUser/{id}")

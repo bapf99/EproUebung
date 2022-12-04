@@ -1,13 +1,26 @@
 package de.thbingen.epro.models;
 
+import de.thbingen.epro.basemodels.AbstractEntity;
 import org.springframework.stereotype.Component;
 
-public class Address {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "address")
+public class Address extends AbstractEntity {
+
+    @Column
     private String street;
+    @Column
     private String zipCode;
+    @Column
     private String country;
 
+    public Address(){
+
+    }
     public Address(String street, String zipCode, String country){
         this.street = street;
         this.zipCode = zipCode;
