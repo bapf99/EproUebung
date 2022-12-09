@@ -5,50 +5,50 @@ import de.thbingen.epro.basemodels.AbstractEntity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User extends AbstractEntity {
 
     @Column
-    private String firstname;
+    private String surname;
 
     @Column
     private String name;
 
     @Column
-    private String eMail;
+    private String e_mail;
 
     @Column
     private String password;
 
-    @ManyToOne
-    private Group group;
+    /*@ManyToOne
+    private Group group;*/
 
-    @OneToOne
+    /*@OneToOne
     @JoinColumn(name = "address_id", nullable = false)
-    private Address address;
+    private Address address;*/
 
     public User(){
         super();
     }
-    public User(String firstName, String name, String eMail, String password, Address address){
+    public User(String surname, String name, String eMail, String password){
         super();
-        this.firstname = firstName;
+        this.surname = surname;
         this.name = name;
-        this.eMail = eMail;
+        this.e_mail = eMail;
         this.password = password;
-        this.address = address;
+        //this.address = address;
     }
 
-    public Group getGroup() { return group; }
+    /*public Group getGroup() { return group; }
 
     public void setGroup(Group group) { this.group = group; }
-
-    public String getFirstName() {
-        return firstname;
+*/
+    public String getSurname() {
+        return surname;
     }
 
-    public void setFirstName(String surname) {
-        this.firstname = surname;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getName() {
@@ -60,11 +60,11 @@ public class User extends AbstractEntity {
     }
 
     public String geteMail() {
-        return eMail;
+        return e_mail;
     }
 
     public void seteMail(String eMail) {
-        this.eMail = eMail;
+        this.e_mail = eMail;
     }
 
     public String getPassword() {
@@ -75,12 +75,16 @@ public class User extends AbstractEntity {
         this.password = password;
     }
 
-    public Address getAddress() {
+    /*public Address getAddress() {
         return address;
     }
 
     public void setAddress(Address address) {
         this.address = address;
+    }*/
+
+    public String toString(){
+        return "First: " + surname;
     }
 
 

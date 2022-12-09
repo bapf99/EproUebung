@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "group")
@@ -19,7 +20,7 @@ public class Group extends AbstractEntity {
     private String description;
 
     @ManyToMany
-    private ArrayList<Right> rights;
+    private List<Right> rights;
 
     public String getName() {
         return name;
@@ -37,11 +38,11 @@ public class Group extends AbstractEntity {
         this.description = description;
     }
 
-    public ArrayList<Right> getRights() {
+    public List<Right> getRights() {
         return rights;
     }
 
-    public void setRights(ArrayList<Right> rights) {
+    public void setRights(List<Right> rights) {
         this.rights = rights;
     }
 
