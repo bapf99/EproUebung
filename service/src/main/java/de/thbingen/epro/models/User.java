@@ -1,6 +1,7 @@
 package de.thbingen.epro.models;
 
 import de.thbingen.epro.basemodels.AbstractEntity;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 
@@ -23,20 +24,21 @@ public class User extends AbstractEntity {
     /*@ManyToOne
     private Group group;*/
 
-    /*@OneToOne
+    @OneToOne
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     @JoinColumn(name = "address_id", nullable = false)
-    private Address address;*/
+    private Address address;
 
     public User(){
         super();
     }
-    public User(String surname, String name, String eMail, String password){
+    public User(String surname, String name, String eMail, String password, Address address){
         super();
         this.surname = surname;
         this.name = name;
         this.e_mail = eMail;
         this.password = password;
-        //this.address = address;
+        this.address = address;
     }
 
     /*public Group getGroup() { return group; }
@@ -75,13 +77,13 @@ public class User extends AbstractEntity {
         this.password = password;
     }
 
-    /*public Address getAddress() {
+    public Address getAddress() {
         return address;
     }
 
     public void setAddress(Address address) {
         this.address = address;
-    }*/
+    }
 
     public String toString(){
         return "First: " + surname;

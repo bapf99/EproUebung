@@ -1,6 +1,7 @@
 package de.thbingen.epro.models;
 
 import de.thbingen.epro.basemodels.AbstractEntity;
+import de.thbingen.epro.basemodels.AddressEntity;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.Column;
